@@ -1,4 +1,0 @@
-#! /bin/zsh
-
-mount /dev/sdb1 /home/drslowpokephd/drives/1tb-hdd
-

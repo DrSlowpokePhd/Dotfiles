@@ -1,9 +1,10 @@
 #! /bin/sh
 
 sxhkd &
-/home/drslowpokephd/polybar-themes/launch.sh &
+polybar -c ~/.config/polybar/config.amber &
+
 #jackd --silent -d alsa -d hw:1
-feh --bg-scale ~/Pictures/t6egg2mu6n631.png 
+~/Dotfiles/.fehbg 
 
 bspc monitor -d I II III IV V
 

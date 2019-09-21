@@ -4,8 +4,8 @@
 
 # terminal emulator
 super + Return    
-	termite
-
+#	termite
+    kitty
 # program launcher
 super + @space
 	~/.rofr.sh -r
@@ -27,6 +27,20 @@ super + {pg_up, pg_down}
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
+
+# change volume
+XF86AudioRaiseVolume
+    pactl -- set-sink-volume 0 +5%
+
+XF86AudioLowerVolume
+    pactl -- set-sink-volume 0 -5%
+
+# adjust backlight
+XF86MonBrightnessUp
+    xbacklight +5
+
+XF86MonBrightnessDown
+    xbacklight -5
 
 #
 # bspwm hotkeys

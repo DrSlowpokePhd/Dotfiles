@@ -1,5 +1,6 @@
 set laststatus=2
 set number
+set clipboard=unnamedplus
 
 syntax on
 filetype plugin indent on

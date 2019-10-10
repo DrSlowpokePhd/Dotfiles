@@ -1,0 +1,3 @@
+[submodule "gruvbox"]
+	path = gruvbox
+	url = /home/drslowpokephd/Dotfiles/vim/.vim/pack/drslowpokephd/start/gruvbox/

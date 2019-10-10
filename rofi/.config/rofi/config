@@ -1,1 +1,3 @@
 rofi.theme: ~/Dotfiles/rofi/.config/rofi/themes/gruvbox-dark.rasi
+rofi.font: Hack Regular 12
+

@@ -6,6 +6,11 @@
 super + Return    
 #	termite
     kitty
+
+# change kitty color scheme
+# super + F5
+
+
 # program launcher
 super + @space
 	~/.rofr.sh -r

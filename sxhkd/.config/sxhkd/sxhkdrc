@@ -42,6 +42,8 @@ XF86MonBrightnessUp
 XF86MonBrightnessDown
     xbacklight -5
 
+XF86Calculator
+    rofi -show calc -modi calc -no-show-match -no-sort
 #
 # bspwm hotkeys
 #

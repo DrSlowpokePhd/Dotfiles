@@ -90,6 +90,7 @@ scroll-down = bspc desktop -f prev.local
 ;== Module Location ========================================================
 
 modules-left = arch bspwm
+modules-center = mpd
 modules-right = battery pulseaudio date powermenu
  
 ;== Modules ========================================================

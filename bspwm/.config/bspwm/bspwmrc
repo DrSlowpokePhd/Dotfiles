@@ -6,7 +6,7 @@ polybar -c ~/.config/polybar/config.amber main &
 dunst -conf ~/.config/dunst/dunstrc &
 
 #jackd --silent -d alsa -d hw:1
-feh --no-fehbg --bg-scale '/home/drslowpokephd/Dotfiles/.wallpapers/landscape.png'
+feh --no-fehbg --bg-scale '/home/drslowpokephd/Dotfiles/.wallpapers/background.jpg'
 
 bspc monitor -d I II III IV V
 

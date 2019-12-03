@@ -5,7 +5,9 @@
 # terminal emulator
 super + Return    
 #	termite
-    kitty
+#    kitty
+    st
+
 
 # change kitty color scheme
 # super + F5

@@ -4,36 +4,38 @@
 
 # terminal emulator
 super + Return    
-#	termite
+	termite
 #    kitty
-    st
+#    st
 
-
-# change kitty color scheme
-# super + F5
-
-
+# dropdown emulator
+super + `
+    tdrop -ma -w -4 -y "$PANEL_HEIGHT" -s dropdown termite
+# rofi shortcuts
 # program launcher
 super + @space
-	~/.rofr.sh -r
+    rofi -modi run,drun -show drun -line-padding 50 -columns 2 -padding 50 -hide-scrollbar -show-icons	
 
 Pause
-    ~/.rofr.sh -r
+    rofi -modi run,drun -show drun -line-padding 50 -columns 2 -padding 50 -hide-scrollbar -show-icons	
+
+super + alt + c
+    rofi -show calc -modi calc -no-show-match -no-sort
 
 # change between audio devices
 super + {F1, F2}
     ~/.chaudio.sh {0, 1}
 
-
 ctrl + alt + Delete
     ~/rofr.sh -l
-
-super + {pg_up, pg_down}
-    bspc window_gap {+10, -10}
 
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
+
+#
+# X keyboard shortcuts
+#
 
 # change volume
 XF86AudioRaiseVolume
@@ -41,6 +43,18 @@ XF86AudioRaiseVolume
 
 XF86AudioLowerVolume
     pactl -- set-sink-volume 0 -5%
+#
+# media keys
+#
+
+XF86AudioPlay
+    mpc toggle 
+
+XF86AudioPause
+    mpc pause
+
+ctrl + {<, >}
+    mpc {prev, next}
 
 # adjust backlight
 XF86MonBrightnessUp
@@ -51,6 +65,7 @@ XF86MonBrightnessDown
 
 XF86Calculator
     rofi -show calc -modi calc -no-show-match -no-sort
+
 #
 # bspwm hotkeys
 #
@@ -67,6 +82,10 @@ super + {_,shift + }w
 super + m
 	bspc desktop -l next
 
+# increase/decrease window gap
+ctrl + alt + g
+    bspc config window_gap {0, 20}; \ 
+    bspc config {2, 6} 
 # send the newest marked node to the newest preselected node
 super + y
 	bspc node newest.marked.local -n newest.!automatic.local

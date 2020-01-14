@@ -1,0 +1,20 @@
+*My Linux/Unix dotfiles*
+
+*How to install
+Clone the repository into your home directory
+Install GNU Stow
+Arch Linux and it's derivatives:
+```sudo pacman -S stow```
+Debian/Ubuntu
+```sudo apt-get install stow```
+Stow the specific application config files you want
+```stow bspwm
+   stow sxhkd
+   stow termite```
+For specific rices/themes that you want to install, use the following syntax
+```stow -d $INSTALL_DIR_HERE/Dotfiles/rice-or-theme-name```
+
+List of current themes in repository
+* warm-n-comfy
+
+If you have any issues installing, please open an issue in github

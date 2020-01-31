@@ -6,7 +6,7 @@ cell_height_scale = 1.0
 cell_width_scale = 1.0
 clickable_url = true
 dynamic_title = true
-font = Ti92Pluspc 13
+font = JetBrains Mono Regular 13
 scrollback_lines = 10000
 hyperlinks = true
 

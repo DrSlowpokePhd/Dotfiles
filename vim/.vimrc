@@ -20,6 +20,7 @@ Plugin 'deoplete-plugins/deoplete-zsh'
 Plugin 'deoplete-plugins/deoplete-jedi'
 Plugin 'sebastianmarkow/deoplete-rust'
 Plugin 'takkii/Bignyanco'
+Plugin 'mattn/emmet-vim'
 " Plugin 'poppyschmo/deoplete-latex'
 
 call vundle#end()
@@ -31,6 +32,7 @@ let g:ale_linters = {
     \'dart': ['dartfmt'],
     \'ruby': ['ruby'],
     \'rust': ['rls'],
+    \'javascript': ['eslint'],
     \}
 
 let g:max_list = 10 

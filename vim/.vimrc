@@ -5,7 +5,6 @@ set rtp+=~/.vim/bundle/Vundle.vim,~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'morhetz/gruvbox'
 Plugin 'rust-lang/rust.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
@@ -15,13 +14,14 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'junegunn/fzf.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'xuhdev/vim-latex-live-preview'
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'deoplete-plugins/deoplete-zsh'
-Plugin 'deoplete-plugins/deoplete-jedi'
-Plugin 'sebastianmarkow/deoplete-rust'
+Plugin 'neoclide/coc.nvim', {'pinned': '1'}
 Plugin 'takkii/Bignyanco'
 Plugin 'mattn/emmet-vim'
-" Plugin 'poppyschmo/deoplete-latex'
+Plugin 'ajmwagar/vim-deus'
+Plugin 'thosakwe/vim-flutter'
+Plugin 'dart-lang/dart-vim-plugin' 
+Plugin 'flazz/vim-colorschemes', {'pinned': '1'}
+Plugin 'skywind3000/asyncrun.vim'
 
 call vundle#end()
 
@@ -39,22 +39,18 @@ let g:max_list = 10
 
 " Deoplete custom options
 " call deoplete#custom#option({})
-call deoplete#custom#var('omni', 'input_patterns', {
-     \ 'tex': g:vimtex#re#deoplete
-     \})
-
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
 let g:Tex_ViewRule_pdf = "zathura"
-
 
 syntax on
 set shell=zsh
 " let mapleader = " "
 " let g:mapleader="\"
 filetype indent plugin on
-colorscheme gruvbox 
-let g:airline_theme='gruvbox'
+" set background=dark
+colorscheme google 
+let g:airline_theme='google'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:vimtex_compiler_progname = 'nvr'
@@ -71,8 +67,6 @@ set autoindent
 set number
 set relativenumber
 set ttyfast
-"set autofast
-"set hisearch
 
 map <F8> :FZF <Enter>
 nmap <S-Tab> :NERDTreeToggle <Enter>
@@ -82,4 +76,4 @@ nmap <C-]> :tabNext <Enter>
 nmap <C-[> :tabprevious <Enter> 
 imap <C-e> <esc>$i<right>
 imap <C-a> <esc>0i
-
+nmap <C-F12> :AsyncStop <Enter> :exec "sleep 1" <Enter> :AsyncRun surf =(markdown %)<Enter>

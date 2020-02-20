@@ -1,24 +1,21 @@
-# export ZSH="/home/drslowpokephd/.oh-my-zsh"
-
-# ZSH_THEME="bira"
 CASE_SENSITIVE="true"
 HIST_STAMPS="mm/dd/yyyy"
-# plugins=(git cargo gem ruby rust)
-# source $ZSH/oh-my-zsh.sh
+
 source ~/.zsh-themes/themes/bira.zsh-theme
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh-plugins/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh-plugins/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh-plugins/lib/git.zsh
-source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh
+source ~/.zsh-plugins/plugins/zsh-you-should-use/you-should-use.plugin.zsh
+
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
   export EDITOR='nvim'
 fi
+export VISUAL='nvim'
 
-## Alias section 
-                                      # Confirm before overwriting something
-alias cp='nocorrect cp -i'
+## Alias section                                       
+alias cp='nocorrect cp -i'              # Confirm before overwriting something
 alias ebuild='nocorrect ebuild'
 alias gist='nocorrect gist'
 alias heroku='nocorrect heroku'
@@ -34,11 +31,6 @@ alias gitu='git add . && git commit && git push'
 alias ls='ls --color=tty'
 alias la='ls -la'
 alias emulator='/home/drslowpokephd/android/emulator/emulator'
-# Theming section  
-autoload -U compinit colors zcalc
-compinit -d
-colors
-
 alias lbstart="~/.config/lemonbar.sh | lemonbar"
 alias bpc="$EDITOR ~/.config/bspwm/bspwmrc"
 alias skc="$EDITOR ~/.config/sxhkd/sxhkdrc"
@@ -49,7 +41,6 @@ alias -g ...='../..'
 alias -g ....='../../..'
 alias -g .....='../../../..'
 alias -g ......='../../../../..'
-
 alias -- -='cd -'
 alias 1='cd -'
 alias 2='cd -2'
@@ -60,9 +51,17 @@ alias 6='cd -6'
 alias 7='cd -7'
 alias 8='cd -8'
 alias 9='cd -9'
-
 alias md='mkdir -p'
 alias rd=rmdir
+alias lsa='ls -lah'
+alias l='ls -lah'
+alias ll='ls -lh'
+alias la='ls -lAh'
+alias _='sudo '
+# Theming section  
+autoload -U compinit colors zcalc
+compinit -d
+colors
 
 function d () {
   if [[ -n $1 ]]; then
@@ -73,12 +72,6 @@ function d () {
 }
 compdef _dirs d
 
-# List directory contents
-alias lsa='ls -lah'
-alias l='ls -lah'
-alias ll='ls -lh'
-alias la='ls -lAh'
-alias _='sudo '
 
 bindkey ' ' magic-space                               # [Space] - do history expansion
 bindkey '^[[1;5C' forward-word                        # [Ctrl-RightArrow] - move forward one word
@@ -105,7 +98,7 @@ setopt pushdminus
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'       # Case insensitive tab completion
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"         # Colored completion (different colors for dirs/files/etc)
-zstyle ':completion:*' rehash true                              # automatically find new executables in path 
+zstyle ':completion:*' rehash true                   # automatically find new executables in path 
 # Speed up completions
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
@@ -116,10 +109,7 @@ HISTSIZE=1000
 SAVEHIST=500
 #export EDITOR=/usr/bin/nvim
 #export VISUAL=/usr/bin/nvim
-WORDCHARS=${WORDCHARS//\/[&.;]}                                 # Don't consider certain characters part of the word
+WORDCHARS=${WORDCHARS//\/[&.;]}                       # Don't consider certain characters part of the word
 
 # enable substitution for prompt
 setopt prompt_subst
-
-# powerline-daemon -q 
-# . /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh

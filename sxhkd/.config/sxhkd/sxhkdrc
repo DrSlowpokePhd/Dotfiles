@@ -5,12 +5,7 @@
 # terminal emulator
 super + Return    
 	termite
-#    kitty
-#    st
 
-# dropdown emulator
-super + `
-    tdrop -ma -w -4 -y "$PANEL_HEIGHT" -s dropdown termite
 # rofi shortcuts
 # program launcher
 super + @space
@@ -25,9 +20,6 @@ super + alt + c
 # change between audio devices
 super + {F1, F2}
     ~/.chaudio.sh {0, 1}
-
-ctrl + alt + Delete
-    ~/rofr.sh -l
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -62,7 +54,8 @@ XF86MonBrightnessUp
 
 XF86MonBrightnessDown
     xbacklight -5
-
+ 
+# rofi calculator
 XF86Calculator
     rofi -show calc -modi calc -no-show-match -no-sort
 
@@ -175,4 +168,11 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+#
+# utility keys
+#
+
+# Screenshot
+
 

@@ -1,21 +1,41 @@
 CASE_SENSITIVE="true"
 HIST_STAMPS="mm/dd/yyyy"
 
-source ~/.zsh-themes/themes/bira.zsh-theme
+# source ~/.zsh-themes/themes/aussiegeek.zsh-theme
 source ~/.zsh-plugins/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh-plugins/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh-plugins/lib/git.zsh
 source ~/.zsh-plugins/plugins/zsh-you-should-use/you-should-use.plugin.zsh
 
+autoload -U compinit colors zcalc
+compinit -d
+colors
+
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
+  export VISUAL='vim'
 else
   export EDITOR='nvim'
+  export VISUAL='nvim'
 fi
-export VISUAL='nvim'
+export UNITY_NOPROXY=localhost,127.0.0.1
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#404040"
+# prompt section
+local git_branch='$(git_prompt_info)'
+if [[ $UID -eq 0 ]]; then
+    local user_symbol='#'
+else
+    local user_symbol='%F{green}λ%f'
+fi
 
-## Alias section                                       
+local current_dir='%{$terminfo[bold]$fg[blue]%}%~ %{$reset_color%}'
+PROMPT="${current_dir}${git_branch} ${user_symbol} "
+RPROMPT="%(?..%?)"
+
+
+# Alias section                                       
 alias cp='nocorrect cp -i'              # Confirm before overwriting something
+alias tmuxp='tmuxinator start -p tmuxinator.yml'
 alias ebuild='nocorrect ebuild'
 alias gist='nocorrect gist'
 alias heroku='nocorrect heroku'
@@ -27,7 +47,7 @@ alias mysql='nocorrect mysql'
 alias sudo='nocorrect sudo'
 alias df='df -h'                                                # Human-readable sizes
 alias free='free -m'                                            # Show sizes in MB
-alias gitu='git add . && git commit && git push'
+alias gitu='git commit && git push'
 alias ls='ls --color=tty'
 alias la='ls -la'
 alias emulator='/home/drslowpokephd/android/emulator/emulator'
@@ -58,10 +78,10 @@ alias l='ls -lah'
 alias ll='ls -lh'
 alias la='ls -lAh'
 alias _='sudo '
+alias test-awesome='Xephyr :5 & sleep 1 ; DISPLAY=:5 awesome'
+
 # Theming section  
-autoload -U compinit colors zcalc
-compinit -d
-colors
+
 
 function d () {
   if [[ -n $1 ]]; then
@@ -78,7 +98,7 @@ bindkey '^[[1;5C' forward-word                        # [Ctrl-RightArrow] - move
 bindkey '^[[1;5D' backward-word                       # [Ctrl-LeftArrow] - move backward one word
 
 
-export PATH="/home/drslowpokephd/bin:/usr/sbin:/sbin:/home/drslowpokephd/.cargo/bin:/home/drslowpokephd/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/var/lib/flatpak/exports/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/drslowpokephd/.gem/ruby/2.6.0/bin:/home/drslowpokephd/.gem/ruby/2.6.0/bin:/home/drslowpokephd/.vimpkg/bin:/usr/sbin/powerline:/home/drslowpokephd/.local/bin:/home/drslowpokephd/flutter/flutter/bin:/opt/android-sdk/tools/bin:/opt/android-sdk/tools:/home/drslowpokephd/android/tools:/home/drslowpokephd/android/emulator:/home/drslowpokephd/android/platform-tools:/home/drslowpokephd/android/build-tools/29.0.3:/home/drslowpokephd/android/tools/bin"
+export PATH="/home/drslowpokephd/bin:/usr/sbin:/sbin:/home/drslowpokephd/.cargo/bin:/home/drslowpokephd/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/var/lib/flatpak/exports/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/drslowpokephd/.gem/ruby/2.6.0/bin:/home/drslowpokephd/.gem/ruby/2.6.0/bin:/home/drslowpokephd/.vimpkg/bin:/usr/sbin/powerline:/home/drslowpokephd/.local/bin:/home/drslowpokephd/flutter/flutter/bin:/opt/android-sdk/tools/bin:/opt/android-sdk/tools:/home/drslowpokephd/android/tools:/home/drslowpokephd/android/emulator:/home/drslowpokephd/android/platform-tools:/home/drslowpokephd/android/build-tools/29.0.3:/home/drslowpokephd/android/tools/bin:/home/jamesd/.gem/ruby/2.7.0/bin:/home/jamesd/.gem/ruby/3.0.0/bin:/home/jamesd/dragonruby-gtk/dragonruby-linux-amd64/bin:/home/jamesd/Dotfiles/scripts"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 ## Options section
@@ -113,3 +133,6 @@ WORDCHARS=${WORDCHARS//\/[&.;]}                       # Don't consider certain c
 
 # enable substitution for prompt
 setopt prompt_subst
+
+# Created by `pipx` on 2021-08-02 23:50:08
+export PATH="$PATH:/home/jamesd/.local/bin"

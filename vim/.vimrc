@@ -29,17 +29,14 @@ let g:Tex_ViewRule_pdf = "zathura"
 
 syntax on
 set shell=zsh
-let g:mapleader = '\'
 filetype indent plugin on
 
 " Editor Theming
 set background=dark
 colorscheme gruvbox 
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:vimtex_compiler_progname = 'nvr'
 let g:python_host_prog = '/usr/bin/python'
 set clipboard+=unnamedplus
+" tabs are 4 spaces
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -52,12 +49,13 @@ set relativenumber " enable relative line numbers (shows distance from current c
 set ttyfast " makes it go faster idk, I keep this around for when I have to use vim
 
 
-nmap <S-Tab> <Cmd> Telescope file_browser <Enter>
+nmap <S-Tab> <Cmd> CHADopen <Enter>
 nmap <A-Tab> :tabNext <Enter>
 nmap <C-t> :tabnew <Enter> :e
 nmap <C-]> :tabnext <Enter>
 nmap <C-[> :tabprevious <Enter> 
 nmap <leader> ff <Cmd> Telescope file_finder <Enter>
 " nmap <C-F12> :AsyncStop <Enter> :exec "sleep 1" <Enter> :AsyncRun surf =(markdown %)<Enter>
+nmap <F8> :Goyo <Enter> 
 nmap <F9> :noh <Enter>
 nmap <F12> <Cmd> Cheatsheet <Enter>

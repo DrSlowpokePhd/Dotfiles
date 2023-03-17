@@ -1,4 +1,4 @@
-set nocompatible              " be iMproved, required
+shttps://github.com/rockerBOO/awesome-neovim#readmeet nocompatible              " be iMproved, required
 filetype off                  " required
 
 set rtp+=~/.vim/bundle/Vundle.vim,~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after

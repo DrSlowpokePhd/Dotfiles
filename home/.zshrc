@@ -79,6 +79,7 @@ alias ll='ls -lh'
 alias la='ls -lAh'
 alias _='sudo '
 alias test-awesome='Xephyr :5 & sleep 1 ; DISPLAY=:5 awesome'
+# alias nvim='nvim -c COQnow' # Starts coq.nvim on editor startup
 
 # Theming section  
 
@@ -98,7 +99,7 @@ bindkey '^[[1;5C' forward-word                        # [Ctrl-RightArrow] - move
 bindkey '^[[1;5D' backward-word                       # [Ctrl-LeftArrow] - move backward one word
 
 
-export PATH="/home/drslowpokephd/bin:/usr/sbin:/sbin:/home/drslowpokephd/.cargo/bin:/home/drslowpokephd/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/var/lib/flatpak/exports/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/drslowpokephd/.gem/ruby/2.6.0/bin:/home/drslowpokephd/.gem/ruby/2.6.0/bin:/home/drslowpokephd/.vimpkg/bin:/usr/sbin/powerline:/home/drslowpokephd/.local/bin:/home/drslowpokephd/flutter/flutter/bin:/opt/android-sdk/tools/bin:/opt/android-sdk/tools:/home/drslowpokephd/android/tools:/home/drslowpokephd/android/emulator:/home/drslowpokephd/android/platform-tools:/home/drslowpokephd/android/build-tools/29.0.3:/home/drslowpokephd/android/tools/bin:/home/jamesd/.gem/ruby/2.7.0/bin:/home/jamesd/.gem/ruby/3.0.0/bin:/home/jamesd/dragonruby-gtk/dragonruby-linux-amd64/bin:/home/jamesd/Dotfiles/scripts"
+export PATH="/home/jamied/bin:/usr/sbin:/sbin:/home/jamied/.cargo/bin:/home/jamied/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/var/lib/flatpak/exports/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/jamied/.gem/ruby/2.6.0/bin:/home/jamied/.gem/ruby/2.6.0/bin:/home/jamied/.vimpkg/bin:/usr/sbin/powerline:/home/jamied/.local/bin:/home/jamied/flutter/flutter/bin:/opt/android-sdk/tools/bin:/opt/android-sdk/tools:/home/jamied/android/tools:/home/jamied/android/emulator:/home/jamied/android/platform-tools:/home/jamied/android/build-tools/29.0.3:/home/jamied/android/tools/bin:/home/jamied/.gem/ruby/2.7.0/bin:/home/jamied/.gem/ruby/3.0.0/bin:/home/jamied/dragonruby-gtk/dragonruby-linux-amd64/bin:/home/jamied/Dotfiles/scripts"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 ## Options section
@@ -127,8 +128,8 @@ zstyle ':completion:*' menu select
 HISTFILE=~/.zhistory
 HISTSIZE=1000
 SAVEHIST=500
-#export EDITOR=/usr/bin/nvim
-#export VISUAL=/usr/bin/nvim
+export EDITOR=/usr/bin/nvim
+export VISUAL=/usr/bin/nvim
 WORDCHARS=${WORDCHARS//\/[&.;]}                       # Don't consider certain characters part of the word
 
 # enable substitution for prompt

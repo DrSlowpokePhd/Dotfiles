@@ -11,6 +11,7 @@ autoload -U compinit colors zcalc
 compinit -d
 colors
 
+export ELECTRON_OZONE_PLATFORM_HINT=auto
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
   export VISUAL='vim'
@@ -99,7 +100,7 @@ bindkey '^[[1;5C' forward-word                        # [Ctrl-RightArrow] - move
 bindkey '^[[1;5D' backward-word                       # [Ctrl-LeftArrow] - move backward one word
 
 
-export PATH="/home/jamied/bin:/usr/sbin:/sbin:/home/jamied/.cargo/bin:/home/jamied/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/var/lib/flatpak/exports/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/jamied/.gem/ruby/2.6.0/bin:/home/jamied/.gem/ruby/2.6.0/bin:/home/jamied/.vimpkg/bin:/usr/sbin/powerline:/home/jamied/.local/bin:/home/jamied/flutter/flutter/bin:/opt/android-sdk/tools/bin:/opt/android-sdk/tools:/home/jamied/android/tools:/home/jamied/android/emulator:/home/jamied/android/platform-tools:/home/jamied/android/build-tools/29.0.3:/home/jamied/android/tools/bin:/home/jamied/.gem/ruby/2.7.0/bin:/home/jamied/.gem/ruby/3.0.0/bin:/home/jamied/dragonruby-gtk/dragonruby-linux-amd64/bin:/home/jamied/Dotfiles/scripts"
+export PATH="/home/jamied/bin:/usr/sbin:/sbin:/home/jamied/.cargo/bin:/home/jamied/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/var/lib/flatpak/exports/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/jamied/.gem/ruby/2.6.0/bin:/home/jamied/.gem/ruby/2.6.0/bin:/home/jamied/.vimpkg/bin:/usr/sbin/powerline:/home/jamied/.local/bin:/home/jamied/flutter/flutter/bin:/opt/android-sdk/tools/bin:/opt/android-sdk/tools:/home/jamied/android/tools:/home/jamied/android/emulator:/home/jamied/android/platform-tools:/home/jamied/android/build-tools/29.0.3:/home/jamied/android/tools/bin:/home/jamied/.gem/ruby/2.7.0/bin:/home/jamied/.gem/ruby/3.0.0/bin:/home/jamied/dragonruby-gtk/dragonruby-linux-amd64/bin:/home/jamied/Dotfiles/scripts:/usr/bin/cmark:/home/jamied/.local/share/JetBrains/Toolbox/scripts"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 ## Options section
